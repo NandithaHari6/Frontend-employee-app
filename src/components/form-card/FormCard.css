@@ -1,0 +1,21 @@
+.row{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    gap:30px;
+    border-radius: 5px;
+    font-size:10px;
+}
+.address{
+    display: flex;
+    flex-direction: column;
+    width:33%;
+    padding:10px;
+}
+.buttons{
+    display:flex;
+    flex-direction: row;
+    gap:30px;
+
+    padding:10px
+}

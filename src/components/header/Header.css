@@ -1,0 +1,19 @@
+.header{
+    padding:20px;
+  
+    font: normal normal bold 24px/32px Nunito Sans;
+   
+    margin-top:40px;
+   
+    width:98%;
+    
+    margin-bottom:40px;
+    display: flex;
+    justify-content: space-between;
+
+
+background: #FDFDFD 0% 0% no-repeat padding-box;
+box-shadow: 0px 3px 6px #9D9D9D29;
+border-radius: 10px;
+opacity: 1;
+}

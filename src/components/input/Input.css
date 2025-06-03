@@ -1,0 +1,29 @@
+.input-box{
+    border-radius: 5px;
+    font-size: 15px;
+    padding:20px;
+    width:100%
+}
+.for{
+    font-size: 15px;
+    position:absolute;
+        top: -8px;
+    left: 17px;
+    background-color: white;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    position:relative;
+}
+.input-field{
+    display:flex;
+    flex-direction: row;
+    width:100%
+}
+.for:hover{
+    color: #03b8fa;
+}
+.input-box:hover{
+    border-color:#03b8fa;
+}

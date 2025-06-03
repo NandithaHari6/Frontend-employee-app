@@ -1,0 +1,23 @@
+.side-bar{
+    position:fixed;
+    width:300px;
+    display:flex;
+    flex-direction:column;
+
+}
+.logo{
+  overflow: unset;
+}
+
+.logo_img{
+    width: 250px;
+    margin:20px;
+    overflow: unset;
+}
+.side-bar nav{
+    text-align: right;
+    padding-top:40px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}

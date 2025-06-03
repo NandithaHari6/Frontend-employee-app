@@ -1,0 +1,21 @@
+
+
+.common-btn{
+        padding:10px;
+    border-radius: 3px;
+    border-color: #03AEEE;
+}
+.primary-btn{
+    color:white;
+    background-color:#03AEEE;
+
+
+    
+}
+.secondary-btn{
+    color:#03AEEE;
+    background-color: white;
+    border-color: #f8f8f8;
+
+    
+}

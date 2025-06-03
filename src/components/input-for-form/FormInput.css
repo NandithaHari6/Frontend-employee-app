@@ -1,0 +1,18 @@
+.create-emp-form-group{
+    display: flex;
+flex-direction: column;
+    gap:10px;
+    width:33%;
+    padding:10px
+}
+.form-input-box{
+    padding:10px;
+    border-radius: 5px;
+    
+}
+.single-input-box{
+    width:100%;
+
+        padding:10px;
+    border-radius: 5px;
+}
