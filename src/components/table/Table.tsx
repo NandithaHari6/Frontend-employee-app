@@ -29,17 +29,20 @@ const Row = ({ emp }: { emp: Employee }) => {
   // const dispatch = useAppDispatch();
   const [deleteEmployee] = useDeleteMutation();
 
-  function editHandle() {
+  function editHandle(e) {
 
     navigate(`/employee/editEmployee/${idToDelete}`);
     
   }
   const [showPopUp, setShowPopUp] = useState(false);
 
-  function handleDelete() {
+  function handleDelete(e) {
+    
     setShowPopUp(true);
   }
-
+ function showDetailsPage(){
+  navigate(`/employee/${idToDelete}`)
+ }
   return (
     <>
       {showPopUp && (
@@ -67,18 +70,18 @@ const Row = ({ emp }: { emp: Employee }) => {
           <div>Do you want to delete this?</div>
         </PopUp>
       )}
-      <tr className="table-row">
+      <tr className="table-row" onClick={showDetailsPage}>
   
             <td>{emp.employeeId}</td>
             <td>{emp.name}</td>
             <td> {emp.dateOfJoining.toString().slice(0,10)}</td>
             <td>{emp.role}</td>
-            <td>{emp.status}</td>
+            <td className={`status status--${emp.status}`}>{emp.status}</td>
             <td>{emp.experience}</td>
             <td>{emp.email}</td>
           
 
-        <td className="action-btns">
+        <td className="action-btns" onClick={(e)=>{e.stopPropagation()}}>
           <Image
             source="/assets/edit.png"
             className="edit-btn"

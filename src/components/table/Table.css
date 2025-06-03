@@ -13,6 +13,25 @@ thead{
 th{
     font-weight: bolder;
 }
+.status{
+    margin: 20px 5px;
+    border-radius: 30px;
+}
+.status--ACTIVE{
+    background-color: #D3F4BE;
+;
+}
+.status--INACTIVE{
+    background-color:  #FFBFBF;
+
+;
+}
+.status--PROBATION{
+    background-color: #F5ECB8;
+
+
+}
+
 /* .table-body{
     display:flex;
  

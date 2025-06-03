@@ -68,7 +68,7 @@ const dispatch=useAppDispatch()
           create(payload).unwrap().then((response)=>{
             console.log("Response")
             console.log(response)
-            // navigate(`/employees/${response.employeeId}`)
+            navigate(`/employee/${response.id}`)
           }).catch((e)=>{
             setError(e.data.message)
             console.log(e.data.message)

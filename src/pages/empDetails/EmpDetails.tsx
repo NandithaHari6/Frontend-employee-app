@@ -16,6 +16,7 @@ const EmpDetails=()=>{
     //     setQueryParams(newqueryParams)
     // }
     const navigate=useNavigate()
+    const {id}=useParams()
     return(<>
     <Content title="Employee Details" btnChildren={
         
@@ -23,7 +24,7 @@ const EmpDetails=()=>{
           icon="/assets/edit-pen.svg"
           text="Edit Employee "
           onClick={(e)=>{
-            navigate("/employee/editEmployee")
+            navigate(`/employee/editEmployee/${id}`)
 
           }}
         />
