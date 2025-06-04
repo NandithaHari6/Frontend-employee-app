@@ -25,11 +25,11 @@ const EditEmployee = () => {
     line2: "",
     pincode: "",
   };
-  const deptMapping={
-  1:"Frontend",
-  2:"Backend",
-  3:"AI"
-}
+  // const deptMapping={
+  // 1:"Frontend",
+  // 2:"Backend",
+  // 3:"AI"
+// }
   console.log(id);
   const [values, setValues] = useState(empObj);
   const [addressValues, setAddressValues] = useState(addObj);
@@ -63,11 +63,12 @@ setValues(currEmployeeData);
         }}
         handleSave={(e) => {
           e.preventDefault();
-          const currDept=Object.entries(deptMapping).filter(([key ,value])=> value===values.dept)
+          // const currDept=Object.entries(deptMapping).filter(([key ,value])=> value===values.dept)
           const payload = {
             ...values,
+            password:"",
                age:Number(values.age),
-           dept_id:Number(Object.keys(currDept)[0]),
+        
             experience:Number(values.experience),
         
             address: {...addressValues,houseNo:Number(addressValues.houseNo)},

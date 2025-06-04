@@ -32,12 +32,12 @@ const [addressValues, setAddressValues] = useState({
   line2: "",
   pincode: "",
 });
-const deptMapping={
-  1:"Frontend",
-  2:"Backend",
-  3:"AI"
-}
-const dispatch=useAppDispatch()
+// const deptMapping={
+//   1:"Frontend",
+//   2:"Backend",
+//   3:"AI"
+// }
+// const dispatch=useAppDispatch()
   return (
     <Content title="Create Employee">
       {(error) && <p> {error}</p>}
@@ -54,14 +54,14 @@ const dispatch=useAppDispatch()
         handleSubmit={(e)=>{
           e.preventDefault()
           console.log(values)
-          const currDept=Object.entries(deptMapping).filter(([key ,value])=> value===values.dept)
+          // const currDept=Object.entries(deptMapping).filter(([key ,value])=> value===values.dept)
           
           const payload = {
             ...values,
             age:Number(values.age),
            
             experience:Number(values.experience),
-            dept_id:Number(Object.keys(currDept)[0]),
+            
             address: {...addressValues,houseNo:Number(addressValues.houseNo)}
           }
           console.log(payload)
