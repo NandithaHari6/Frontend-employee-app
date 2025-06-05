@@ -4,7 +4,7 @@ import FormCard from "../../components/form-card/FormCard";
 // import { type AddEmployeeAction } from "../../store-old/employee/employee.types";
 // import store from "../../store-old/store";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 const EditEmployee = () => {
   const { id } = useParams();
   const empObj = {
@@ -15,9 +15,11 @@ const EditEmployee = () => {
     status: "",
     experience: 0,
     email: "",
-    dept_id: 0,
+    dept_id:0,
     age: 0,
     password: "",
+
+
   };
   const addObj = {
     houseNo: 0,
@@ -33,15 +35,18 @@ const EditEmployee = () => {
   console.log(id);
   const [values, setValues] = useState(empObj);
   const [addressValues, setAddressValues] = useState(addObj);
-  const { data: currEmployee } = useGetOneEmpQuery(id);
-  console.log(currEmployee);
+  const { data: currEmployee } = useGetOneEmpQuery(Number(id));
+  const navigate=useNavigate()
+  // console.log(currEmployee);
 const [update]=useUpdateMutation()
   useEffect(() => {
     if (currEmployee) {
       const { address: currAddress, ...currEmployeeData } =
         currEmployee;
-        console.log(currAddress)
-setValues(currEmployeeData);
+        // console.log("curr employee",currEmployeeData)
+        // console.log(currAddress)
+// setValues(currEmployeeData);
+setValues({...currEmployeeData,dept_id:currEmployeeData.department.id ? currEmployeeData.department.id:2})
  setAddressValues(currAddress);
     }
 
@@ -61,23 +66,29 @@ setValues(currEmployeeData);
         addressOnChange={(field: string, value) => {
           setAddressValues({ ...addressValues, [field]: value });
         }}
-        handleSave={(e) => {
+        handleSave={async(e) => {
           e.preventDefault();
           // const currDept=Object.entries(deptMapping).filter(([key ,value])=> value===values.dept)
           const payload = {
             ...values,
             password:"",
                age:Number(values.age),
+           
         
             experience:Number(values.experience),
         
             address: {...addressValues,houseNo:Number(addressValues.houseNo)},
 
-      
+         
             id:id
           };
+          // console.log("Update clicked")
+        //   const response=await update(payload);
+        //           console.log("Successfully updated",response)
+        // navigate(`/employee/${id}`)
       update(payload).unwrap().then(()=>{
         console.log("Successfully updated")
+        navigate(`/employee/${id}`)
       }).catch((e)=>{
         console.log(e.data.message)
       })

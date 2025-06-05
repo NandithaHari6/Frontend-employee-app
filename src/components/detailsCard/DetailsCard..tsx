@@ -38,6 +38,7 @@ const DetailsCard = () => {
         <NameLabel label="Experience" value={emp.experience} />
         <NameLabel label="Address" value={emp.address.houseNo +" "+ emp.address.line1 +" "+emp.address.line2+" "+emp.address.pincode} />
         <NameLabel label="Employee ID" value={emp.employeeId} />
+        {emp.department && <NameLabel label="Department" value={emp.department.dept_name} />}
       </div>)}
     </>
   );

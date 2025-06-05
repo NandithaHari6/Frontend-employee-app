@@ -32,7 +32,11 @@ const FormCard = ({
   const dept_names = dept?.map((d) => {
    return  d.dept_name;
   })||[];
-
+ function getDeptName(dept_id){
+  const currDept=dept?.find((d)=>d.id===dept_id)
+  
+  return currDept?.dept_name
+ }
   return (
     <>
       <div className="form">
@@ -69,12 +73,12 @@ const FormCard = ({
             options={["HR", "DEVELOPER", "UI"]}
           />
           <Select
-            value={values.dept_id}
+            value={getDeptName(values.dept_id)}
             onChange={(e) => {
               const currDept = dept?.find(
                 (d) => d.dept_name === e.target.value
               );
-              onChange("dept", currDept.id);
+              onChange("dept_id", currDept.id);
             }}
             label="Department"
             options={dept_names}
